@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Página de Listagem de Curso</h1>
+
+            <%= cursos %>
+
+    <table>
+        <thead>
+            <!-- <tr>
+                <th>ID</th>
+                <th>Nome do Curso</th>
+                <th>Carga horária </th>
+                <th>Escolaridade Requerida</th>
+            </tr> -->
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>354</td>
+                <td>Podologia</td>
+                <td>1400h</td>
+                <td>Ensino Médio</td>
+            </tr> -->
+        </tbody>
+              <tbody>
+            <!-- <tr>
+                <td>355</td>
+                <td>Informática</td>
+                <td>1200h</td>
+                <td>Ensino Médio</td>
+            </tr> -->
+        </tbody>
+          <tbody>
+                <% cursos.forEach(function(curso) { %>
+                     <tr>
+                 <td> <%= curso.id %></td>
+                <td> <%= curso.nome %></td>
+                <td> <%= curso.carga_horaria %></td>
+                <td>Ensino Médio</td>
+              </tr>
+              <% }) %>
+             
+
+
+
+            <!-- <tr>
+                <td>356</td>
+                <td>Moda</td>
+                <td>1200h</td>
+                <td>Graduação</td>
+            </tr> -->
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,9 +1,21 @@
-function listar(request, response) {
-    response.send("Função responsável pela listagem.")
+// importando o arquivo de configuraçõa do banco  de dados
+const cursoModel = require("../models/curso.model")
+
+async function listar(request, response) {
+
+   const cursos = await cursoModel.listarTodosCursos()
+    console.log(cursos)
+
+  // renderizar a view listar-cursos
+  response.render('listar-cursos', { cursos })
+  }
+
+function criar(request, response) {
+  response.send("Função responsável por criar um curso")
 }
 
-function cadastrar(request, response) {
-    response.send("Função que cadastro o curso")
+function atualizar(request, response) {
+    response.send("Função que atualizar o curso")
 }
 
 function deletar(request, response) {
@@ -12,6 +24,7 @@ function deletar(request, response) {
 
 module.exports = {
     listar,
-    cadastrar,
+    criar,
+    atualizar,
     deletar
 }
